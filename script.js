@@ -42,19 +42,78 @@ function setGridRow(amountRowGrid) {
 }
 
 function addHoverClass(){
-    const tempGridPiece = document.querySelectorAll(".gridPiece")
+    let tempGridPiece = document.querySelectorAll(".gridPiece")
     tempGridPiece.forEach(element => {
         element.addEventListener("mouseover", (e) => {
-            e.target.style.backgroundColor = 
-            `rgb(
-            ${randomNumber(1, 100)}, 
-            ${randomNumber(1, 100)}, 
-            ${randomNumber(1, 100)}
-            )`;
+// Ejercicio "Extra Credit", despues de 10 iteraciones el cuadro debe quedar negro
+            changeColor(e)
+// Codigo para que los cuadros cambien de color aleatorio.
+// primera parte "Extra Credit"
+            // e.target.style.backgroundColor = 
+            // `rgb(
+            // ${randomNumber(0, 99)}, 
+            // ${randomNumber(0, 99)}, 
+            // ${randomNumber(0, 99)}
+            // )`;
         })
     });
 }
 
+function changeColor(e){
+    if (e.target.style.backgroundColor == "") {e.target.style.backgroundColor = rgbColor(100)} 
+    
+    switch (e.target.style.backgroundColor) {
+        case rgbColor(100):
+            e.target.style.backgroundColor = rgbColor(90)
+            break;
+            case rgbColor(90):
+                e.target.style.backgroundColor = rgbColor(80)
+                break;
+                case rgbColor(80):
+                    e.target.style.backgroundColor = rgbColor(70)
+                    break;
+                    case rgbColor(70):
+                        e.target.style.backgroundColor = rgbColor(60)
+                        break;
+                        case rgbColor(60):
+                            e.target.style.backgroundColor = rgbColor(50)
+                            break;
+                            case rgbColor(50):
+                                e.target.style.backgroundColor = rgbColor(40)
+                                break;
+                                case rgbColor(40):
+                                    e.target.style.backgroundColor = rgbColor(30)
+                                    break;
+                                    case rgbColor(30):
+                                        e.target.style.backgroundColor = rgbColor(20)
+                                        break;
+                                        case rgbColor(20):
+                                            e.target.style.backgroundColor = rgbColor(10)
+                                            break;
+                                            case rgbColor(10):
+                                                e.target.style.backgroundColor = rgbColor(0)
+                                                break;
+    }
+}
+    
+    
+    // else if (e.target.style.backgroundColor == rgbColor(100)) {
+    //     e.target.style.backgroundColor = rgbColor(90)
+    // } else if (e.target.style.backgroundColor == rgbColor(90)) {
+    //     e.target.style.backgroundColor = rgbColor(50)
+    // }
+
+
+    
+
+
+
+function rgbColor(num1){
+    return `rgb(${num1}, ${num1}, ${num1})`;
+}
+
+
 function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
