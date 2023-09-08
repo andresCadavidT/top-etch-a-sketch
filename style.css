@@ -1,0 +1,43 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.container{
+    margin: 0 auto;
+    display:flex;
+    flex-direction: column;
+    width: 800px;
+    height: 900px;
+}
+
+.gridColumn{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+}
+
+.gridPiece{
+    border: 2px black solid;
+    height: auto;
+    width: auto;
+    flex-grow: 1
+}
+
+.reset-button{
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    width:auto;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.setHover{
+    background-color: pink;
+}
