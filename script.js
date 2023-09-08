@@ -21,10 +21,11 @@ function reset() {
     if (numSetGrid <= 100) {
     setGridColumn(numSetGrid)
     setGridRow(numSetGrid)
+    addHoverClass()
     } else {
         alert("Try Again")
     }
-    addHoverClass()
+    
 }
 
 function setGridColumn(amountGridPiece){
@@ -44,7 +45,12 @@ function addHoverClass(){
     const tempGridPiece = document.querySelectorAll(".gridPiece")
     tempGridPiece.forEach(element => {
         element.addEventListener("mouseover", (e) => {
-            e.target.classList.toggle("setHover")
+            e.target.style.backgroundColor = 
+            `rgb(
+            ${randomNumber(1, 100)}, 
+            ${randomNumber(1, 100)}, 
+            ${randomNumber(1, 100)}
+            )`;
         })
     });
 }
