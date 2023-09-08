@@ -44,7 +44,7 @@ function setGridRow(amountRowGrid) {
 function addHoverClass(){
     let tempGridPiece = document.querySelectorAll(".gridPiece")
     tempGridPiece.forEach(element => {
-        element.addEventListener("mouseover", (e) => {
+        element.addEventListener("pointerover", (e) => {
 // Ejercicio "Extra Credit", despues de 10 iteraciones el cuadro debe quedar negro
             changeColor(e)
 // Codigo para que los cuadros cambien de color aleatorio.
